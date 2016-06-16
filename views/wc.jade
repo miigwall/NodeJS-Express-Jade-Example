@@ -1,0 +1,17 @@
+extends layout
+
+block content
+
+	h1 WC
+
+	div
+		img(src='images/icon_wc.png').checkpoint_icon
+
+	if username
+		div
+			div Logged in as <b>#{username}</b>
+			form(name="use", method="post")
+				input(type="submit", name="use_wc", value="Use!")
+
+	div.pointlinks
+		a(href='./') Back

@@ -1,0 +1,27 @@
+extends layout
+
+block content
+
+	h1 INFO
+
+	div
+		img(src='images/icon_info.png').checkpoint_icon
+
+	if username
+		div
+			div Logged in as <b>#{username}</b>
+			form(name="logout", method="post")
+				input(type="submit", name="logout", value="Logout")
+
+			div.pointlinks
+				a(href='drink') Drink (#{p_drink})
+				a(href='food') Food (#{p_food})
+				a(href='wc') WC (#{p_wc})
+
+	else
+		form(name="add-user", method="post")
+			div.input
+				div.label Type your username:
+				input(type="text", name="username")
+			div.actions
+				input(type="submit", value="Login")
